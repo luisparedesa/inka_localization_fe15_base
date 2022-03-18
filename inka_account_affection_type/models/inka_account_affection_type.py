@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
 
-class AffectionTypeBase(models.Model):
+class AccountAffectionType(models.Model):
     _name = 'inka.account.affection.type'
     _description = 'Affection Type'
 
-    code = fields.Char(required=True, translate=True)
-    name = fields.Char(required=True, translate=True)
-    is_visible = fields.Boolean()
+    code_at = fields.Char(string="Código",required=True, translate=True)
+    name = fields.Char(string="Nombre",required=True, translate=True)
+    is_visible = fields.Boolean(string="Visible")
 
 
