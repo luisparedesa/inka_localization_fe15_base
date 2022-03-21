@@ -72,6 +72,9 @@
                 <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='tax_ids']" position="before">
                     <field name="affection_id" />
                 </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='tax_ids']" position="before">
+                    <field name="affection_id" />
+                </xpath>
             </field>
         </record>
 
