@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 347ead007d7ec556272d222f101afc1fd7fcf459
         <record id="view_affection_type_form" model="ir.ui.view">
             <field name="name">inka.account.affection.type.form</field>
             <field name="model">inka.account.affection.type</field>
@@ -54,13 +58,27 @@
             <field name="view_id" ref="inka_account_affection_type.view_affection_type_tree"/>
             <field name="act_window_id" ref="action_type_affection"/>
         </record>
-
+<!--
          <menuitem id="menu_localization"
                       action="action_type_affection"
                       parent="account.menu_finance_configuration"
                       sequence="2"
-                      groups="account.group_account_invoice"/>
+                      groups="account.group_account_invoice"/>-->
 
 
+     <!-- Tipo de Afectación en account.move -->
+        <record id="view_inka_account_affection_type_inherit_account" model="ir.ui.view">
+            <field name="name">account.move.affectation.type.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='tax_ids']" position="before">
+                    <field name="affection_id" />
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='tax_ids']" position="before">
+                    <field name="affection_id" />
+                </xpath>
+            </field>
+        </record>
 
 </odoo>

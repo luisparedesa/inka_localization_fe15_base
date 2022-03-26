@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_account_table_type_document_form" model="ir.ui.view">
+            <field name="name">inka.account.table.type.document.form</field>
+            <field name="model">inka.account.table.type.document</field>
+            <field name="arch" type="xml">
+              <form string="Document Type">
+                <sheet>
+                    <group>
+                        <field name="code_at"/>
+                        <field name="name"/>
+                        <field name="code_table"/>
+                        <field name="is_visible"/>
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+
+         <record id="view_account_table_type_document_tree" model="ir.ui.view">
+            <field name="name">inka.account.table.type.document.tree</field>
+            <field name="model">inka.account.table.type.document</field>
+             <field name="priority">4</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de Documento">
+                        <field name="code_at"/>
+                        <field name="name"/>
+                        <field name="code_table"/>
+                        <field name="is_visible"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_table_type_document" model="ir.actions.act_window">
+            <field name="name">Tipo de Documento</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inka.account.table.type.document</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Crea un nuevo Tipo de Documento
+              </p>
+            </field>
+        </record>
+
+        <record id="account_base_action_view_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="3"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="inka_account_table.view_account_table_type_document_form"/>
+            <field name="act_window_id" ref="action_account_table_type_document"/>
+        </record>
+
+        <record id="account_base_action_view_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="inka_account_table.view_account_table_type_document_tree"/>
+            <field name="act_window_id" ref="action_account_table_type_document"/>
+        </record>
+
+<!--         <menuitem id="menu_localization"
+                      action="action_account_table_type_document"
+                      parent="account.menu_finance_configuration"
+                      sequence="2"
+                      groups="account.group_account_invoice"/>-->
+
+
+     <!-- Tipo de documento en account.journal_id -->
+        <record id="view_inka_account_table_type_document_inherit_account_journal" model="ir.ui.view">
+            <field name="name">account.table.type.document.journal.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='currency_id']" position="before">
+                    <field name="document_type_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    <!-- CAI en account.journal_id -->
+         <record id="view_inka_account_table_cai_inherit_account_journal" model="ir.ui.view">
+            <field name="name">account.table.cai.journal.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='default_account_id']" position="before">
+                    <field name="move_cai"/>
+                </xpath>
+            </field>
+         </record>
+
+</odoo>

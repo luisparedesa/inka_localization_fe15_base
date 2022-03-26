@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'Tipos de Afectación',
+    'name': 'Base de Factura ',
     'version': '1.0',
     'category': 'Accounting/Accounting',
     'description': """
- Agrega mantenimiento de tipos de afectación
+ Mostrar campos que no se ven en el estándar
     """,
     'depends': ['base',
                 'account',
-                'inka_account_base',
                 ],
     'data': [
-        'views/inka_account_affection_type_views.xml',
-        'security/ir.model.access.csv',
+        'views/inka_account_base_views.xml',
     ],
     'auto_install': True,
     'license': 'LGPL-3',
