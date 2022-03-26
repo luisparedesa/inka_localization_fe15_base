@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<<<<<<< HEAD
-=======
 
->>>>>>> 347ead007d7ec556272d222f101afc1fd7fcf459
         <record id="view_affection_type_form" model="ir.ui.view">
             <field name="name">inka.account.affection.type.form</field>
             <field name="model">inka.account.affection.type</field>
@@ -80,5 +77,10 @@
                 </xpath>
             </field>
         </record>
+
+          <menuitem id="account_base_menu" name="Base de Facturación" parent="account.menu_finance_configuration" groups="account.group_account_invoice,account.group_account_readonly" sequence="1">
+                <menuitem id="menu_action_affection_type" action="inka_account_affection_type.action_type_affection" sequence="1"/>
+                <menuitem id="menu_action_type_document" action="inka_account_table.action_account_table_type_document" groups="account.group_account_manager" sequence="3"/>
+          </menuitem>
 
 </odoo>
