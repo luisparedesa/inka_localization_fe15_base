@@ -89,4 +89,6 @@
             </field>
          </record>
 
+    <menuitem id="menu_action_type_document" action="inka_account_table.action_account_table_type_document" parent="inka_account_affection_type.account_base_menu" groups="account.group_account_manager" sequence="3"/>
+
 </odoo>
