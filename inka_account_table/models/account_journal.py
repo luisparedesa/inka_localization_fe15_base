@@ -12,7 +12,7 @@ class AccountTableJournal(models.Model):
 
     move_cai = fields.Char(
         string="C.A.I.",
-        required=True,
+        required=False,
         translate=True
     )
 
