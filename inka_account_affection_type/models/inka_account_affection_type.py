@@ -10,3 +10,6 @@ class AccountAffectionType(models.Model):
     is_visible = fields.Boolean(string="Visible")
 
 
+
+
+
