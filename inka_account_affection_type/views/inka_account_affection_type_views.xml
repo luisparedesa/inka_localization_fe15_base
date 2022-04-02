@@ -55,13 +55,6 @@
             <field name="view_id" ref="inka_account_affection_type.view_affection_type_tree"/>
             <field name="act_window_id" ref="action_type_affection"/>
         </record>
-<!--
-         <menuitem id="menu_localization"
-                      action="action_type_affection"
-                      parent="account.menu_finance_configuration"
-                      sequence="2"
-                      groups="account.group_account_invoice"/>-->
-
 
      <!-- Tipo de Afectación en account.move -->
         <record id="view_inka_account_affection_type_inherit_account" model="ir.ui.view">
@@ -73,6 +66,20 @@
                     <field name="affection_id" />
                 </xpath>
                 <xpath expr="//field[@name='line_ids']/tree/field[@name='tax_ids']" position="before">
+                    <field name="affection_id" />
+                </xpath>
+            </field>
+        </record>
+
+
+         <!-- Tipo de Afectación en account.tax -->
+
+        <record id="view_inka_account_affection_type_inherit_account_tax" model="ir.ui.view">
+            <field name="name">account.tax.affectation.type.inherit</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type_tax_use']" position="after">
                     <field name="affection_id" />
                 </xpath>
             </field>
