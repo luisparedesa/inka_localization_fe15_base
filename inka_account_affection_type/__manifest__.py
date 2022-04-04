@@ -14,6 +14,8 @@
     'data': [
         'views/inka_account_affection_type_views.xml',
         'security/ir.model.access.csv',
+        #Honduras
+        'data/affection_type_hn_data.xml',
     ],
     'auto_install': True,
     'license': 'LGPL-3',

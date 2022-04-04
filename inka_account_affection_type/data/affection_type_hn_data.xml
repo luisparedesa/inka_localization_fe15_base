@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="True">
+        <record id="affection_type_1" model="inka.account.affection.type">
+            <field name="code_at">TA01</field>
+            <field name="name">GRAVADO 18%</field>
+            <field name="is_visible">True</field>
+        </record>
+        <record id="affection_type_2" model="inka.account.affection.type">
+            <field name="code_at">TA02</field>
+            <field name="name">GRAVADO 15%</field>
+            <field name="is_visible">True</field>
+        </record>
+        <record id="affection_type_3" model="inka.account.affection.type">
+            <field name="code_at">TA03</field>
+            <field name="name">EXONERADO</field>
+            <field name="is_visible">True</field>
+        </record>
+        <record id="affection_type_4" model="inka.account.affection.type">
+            <field name="code_at">TA04</field>
+            <field name="name">EXENTO</field>
+            <field name="is_visible">True</field>
+        </record>
+        <record id="affection_type_5" model="inka.account.affection.type">
+            <field name="code_at">TA05</field>
+            <field name="name">I.S.V. 15%</field>
+            <field name="is_visible">True</field>
+        </record>
+        <record id="affection_type_6" model="inka.account.affection.type">
+            <field name="code_at">TA06</field>
+            <field name="name">I.S.V. 18%</field>
+            <field name="is_visible">True</field>
+        </record>
+    </data>
+</odoo>

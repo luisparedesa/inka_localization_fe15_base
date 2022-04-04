@@ -58,12 +58,6 @@
             <field name="act_window_id" ref="action_account_table_type_document"/>
         </record>
 
-<!--         <menuitem id="menu_localization"
-                      action="action_account_table_type_document"
-                      parent="account.menu_finance_configuration"
-                      sequence="2"
-                      groups="account.group_account_invoice"/>-->
-
 
      <!-- Tipo de documento en account.journal_id -->
         <record id="view_inka_account_table_type_document_inherit_account_journal" model="ir.ui.view">
@@ -77,17 +71,6 @@
             </field>
         </record>
 
-    <!-- CAI en account.journal_id -->
-         <record id="view_inka_account_table_cai_inherit_account_journal" model="ir.ui.view">
-            <field name="name">account.table.cai.journal.inherit</field>
-            <field name="model">account.journal</field>
-            <field name="inherit_id" ref="account.view_account_journal_form"/>
-            <field name="arch" type="xml">
-               <xpath expr="//field[@name='default_account_id']" position="before">
-                    <field name="move_cai"/>
-                </xpath>
-            </field>
-         </record>
 
 
     <menuitem id="menu_action_type_document" action="inka_account_table.action_account_table_type_document" parent="inka_account_affection_type.account_base_menu" groups="account.group_account_manager" sequence="3"/>

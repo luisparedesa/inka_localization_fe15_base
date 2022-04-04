@@ -10,11 +10,7 @@ class AccountTableJournal(models.Model):
         string='Tipo de documento',
     )
 
-    move_cai = fields.Char(
-        string="C.A.I.",
-        required=False,
-        translate=True
-    )
+
 
 
 

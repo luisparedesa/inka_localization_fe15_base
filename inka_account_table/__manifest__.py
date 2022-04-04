@@ -14,6 +14,8 @@
     'data': [
         'views/inka_account_table_type_document_views.xml',
         'security/ir.model.access.csv',
+        #Honduras
+        'data/type_document_hn_data.xml',
     ],
     'auto_install': True,
     'license': 'LGPL-3',

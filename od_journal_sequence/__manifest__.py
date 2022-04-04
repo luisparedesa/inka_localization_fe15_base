@@ -10,7 +10,7 @@
     'author': 'Odoo Developers',
     'support': 'developersodoo@gmail.com',
     'live_test_url': 'https://www.youtube.com/watch?v=z-xZwCah7wM',
-    'depends': ['account'],
+    'depends': ['account','inka_account_base',],
     'demo': [],
     'data': [
         'security/ir.model.access.csv',
