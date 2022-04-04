@@ -7,7 +7,7 @@ class AccountMoveAffectionType(models.Model):
 
     affection_id = fields.Many2one(
         'inka.account.affection.type',
-        string='Tipo de Afectación',
+        string='T. Afectación',
     )
 
 
