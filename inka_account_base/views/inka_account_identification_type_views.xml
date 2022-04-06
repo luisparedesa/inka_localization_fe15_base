@@ -58,7 +58,7 @@
     </record>
 
 
-    <menuitem id="menu_action_identification_type" parent="inka_account_affection_type.account_base_menu"
+    <menuitem id="menu_action_identification_type" parent="inka_account_base.account_base_menu"
               action="inka_account_base.action_identification_type" sequence="1"/>
 
 </odoo>
