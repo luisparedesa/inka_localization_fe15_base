@@ -9,9 +9,11 @@
     """,
     'depends': ['base',
                 'account',
+                'l10n_latam_base',
                 ],
     'data': [
         'views/inka_account_base_views.xml',
+        'views/inka_account_identification_type_views.xml',
     ],
     'auto_install': True,
     'license': 'LGPL-3',
