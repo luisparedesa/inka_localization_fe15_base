@@ -5,9 +5,9 @@ class AccountAffectionType(models.Model):
     _name = 'inka.account.affection.type'
     _description = 'Affection Type'
 
-    code_at = fields.Char(string="Código",required=True, translate=True)
-    name = fields.Char(string="Nombre",required=True, translate=True)
-    is_visible = fields.Boolean(string="Visible")
+    code_at = fields.Char(string=u"Código",required=True, translate=True)
+    name = fields.Char(string=u"Nombre",required=True, translate=True)
+    is_visible = fields.Boolean(string=u"Visible")
 
 
 

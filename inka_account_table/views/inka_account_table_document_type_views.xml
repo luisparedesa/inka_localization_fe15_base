@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <record id="view_account_table_type_document_form" model="ir.ui.view">
-            <field name="name">inka.account.table.type.document.form</field>
-            <field name="model">inka.account.table.type.document</field>
+        <record id="view_account_table_document_type_form" model="ir.ui.view">
+            <field name="name">inka.account.table.document.type.form</field>
+            <field name="model">inka.account.table.document.type</field>
             <field name="arch" type="xml">
               <form string="Document Type">
                 <sheet>
@@ -18,9 +18,9 @@
             </field>
         </record>
 
-         <record id="view_account_table_type_document_tree" model="ir.ui.view">
-            <field name="name">inka.account.table.type.document.tree</field>
-            <field name="model">inka.account.table.type.document</field>
+         <record id="view_account_table_document_type_tree" model="ir.ui.view">
+            <field name="name">inka.account.table.document.type.tree</field>
+            <field name="model">inka.account.table.document.type</field>
              <field name="priority">4</field>
             <field name="arch" type="xml">
                 <tree string="Tipo de Documento">
@@ -32,10 +32,10 @@
             </field>
         </record>
 
-        <record id="action_account_table_type_document" model="ir.actions.act_window">
+        <record id="action_account_table_document_type" model="ir.actions.act_window">
             <field name="name">Tipo de Documento</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">inka.account.table.type.document</field>
+            <field name="res_model">inka.account.table.document.type</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
@@ -47,21 +47,21 @@
         <record id="account_base_action_view_form" model="ir.actions.act_window.view">
             <field name="sequence" eval="3"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="inka_account_table.view_account_table_type_document_form"/>
-            <field name="act_window_id" ref="action_account_table_type_document"/>
+            <field name="view_id" ref="inka_account_table.view_account_table_document_type_form"/>
+            <field name="act_window_id" ref="action_account_table_document_type"/>
         </record>
 
         <record id="account_base_action_view_tree" model="ir.actions.act_window.view">
             <field name="sequence" eval="1"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="inka_account_table.view_account_table_type_document_tree"/>
-            <field name="act_window_id" ref="action_account_table_type_document"/>
+            <field name="view_id" ref="inka_account_table.view_account_table_document_type_tree"/>
+            <field name="act_window_id" ref="action_account_table_document_type"/>
         </record>
 
 
      <!-- Tipo de documento en account.journal_id -->
-        <record id="view_inka_account_table_type_document_inherit_account_journal" model="ir.ui.view">
-            <field name="name">account.table.type.document.journal.inherit</field>
+        <record id="view_inka_account_table_document_type_inherit_account_journal" model="ir.ui.view">
+            <field name="name">account.table.document.type.journal.inherit</field>
             <field name="model">account.journal</field>
             <field name="inherit_id" ref="account.view_account_journal_form"/>
             <field name="arch" type="xml">
@@ -73,6 +73,6 @@
 
 
 
-    <menuitem id="menu_action_type_document" action="inka_account_table.action_account_table_type_document" parent="inka_account_base.account_base_menu" groups="account.group_account_manager" sequence="3"/>
+    <menuitem id="menu_action_document_type" action="inka_account_table.action_account_table_document_type" parent="inka_account_base.account_base_menu" groups="account.group_account_manager" sequence="3"/>
 
 </odoo>

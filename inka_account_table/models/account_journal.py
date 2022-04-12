@@ -6,8 +6,8 @@ class AccountTableJournal(models.Model):
     _inherit = "account.journal"
 
     document_type_id = fields.Many2one(
-        'inka.account.table.type.document',
-        string='Tipo de documento',
+        'inka.account.table.document.type',
+        string=u'Tipo de documento',
     )
 
 

@@ -30,7 +30,7 @@
             </field>
         </record>
 
-        <record id="action_type_affection" model="ir.actions.act_window">
+        <record id="action_affection_type" model="ir.actions.act_window">
             <field name="name">Tipos de Afectación</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">inka.account.affection.type</field>
@@ -46,14 +46,14 @@
             <field name="sequence" eval="3"/>
             <field name="view_mode">form</field>
             <field name="view_id" ref="inka_account_affection_type.view_affection_type_form"/>
-            <field name="act_window_id" ref="action_type_affection"/>
+            <field name="act_window_id" ref="action_affection_type"/>
         </record>
 
         <record id="affection_type_action_view_tree" model="ir.actions.act_window.view">
             <field name="sequence" eval="1"/>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="inka_account_affection_type.view_affection_type_tree"/>
-            <field name="act_window_id" ref="action_type_affection"/>
+            <field name="act_window_id" ref="action_affection_type"/>
         </record>
 
      <!-- Tipo de Afectación en account.move -->
@@ -85,6 +85,6 @@
             </field>
         </record>
 
-        <menuitem id="menu_action_affection_type"  parent="inka_account_base.account_base_menu" action="inka_account_affection_type.action_type_affection" sequence="1"/>
+        <menuitem id="menu_action_affection_type"  parent="inka_account_base.account_base_menu" action="inka_account_affection_type.action_affection_type" sequence="1"/>
 
 </odoo>

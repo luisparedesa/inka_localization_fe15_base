@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'Base de Factura ',
+    'name': 'Base de Factura Electrónica',
     'version': '1.0',
     'category': 'Accounting/Accounting',
     'description': """
- Mostrar campos que no se ven en el estándar
+ Base de Factura Electrónica
     """,
+    'author': 'Inkaopen Team',
+    'support': 'ayudaodoo@gmail.com',
     'depends': ['base',
                 'account',
                 'l10n_latam_base',
