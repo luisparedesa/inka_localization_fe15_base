@@ -14,6 +14,7 @@
                 ],
     'data': [
         'views/account_edi_document.xml',
+        'views/edi_request_view.xml'
     ],
     'auto_install': True,
     'license': 'LGPL-3',
