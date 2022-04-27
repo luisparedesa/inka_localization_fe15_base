@@ -8,13 +8,33 @@
             <form string="EDI Request" create="false">
                 <sheet>
                     <group>
-                        <group name="information" string="Information"> 
+                        <group name="information" string="Information">
                             <field name="partner_id" widget="partner_id" string="Document"/>
                         </group>
-                    </group>  
+                    </group>
+                    <notebook>
+                        <page string="Historial de Envío">
+                            <field name="log_ids" string="Status log" readonly="True">
+                                <form>
+                                    <sheet>
+                                        <notebook name="other_info">
+                                            <page name="name" string="JSON">
+                                                <field name="json_sent"/>
+                                            </page>
+                                            <page name="name" string="Response">
+                                                <field name="json_response"/>
+                                            </page>
+                                        </notebook>
+                                    </sheet>
+                                </form>
+                                <tree>
+                                    <field name="date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
-    
 </odoo>

@@ -17,6 +17,7 @@ class EdiEcRequest(models.Model):
     type = fields.Selection([('invoice','Invoice')], string='Document ype')
     document_date = fields.Date(string='Document date')
     reference = fields.Char(string='Reference', compute='_compute_reference', readonly=True, store=False)
+    log_ids = fields.One2many('l10n_pe_edi.request.log','request_id', string='EDI log', copy=False)
 
     @api.depends('model', 'res_id')
     def _compute_reference(self):
@@ -46,3 +47,14 @@ class EdiEcRequest(models.Model):
                 'type': 'ir.actions.act_window',
             }
         return True
+
+
+class L10nPeEdiRequestLog(models.Model):
+    _name = 'l10n_pe_edi.request.log'
+    _description = 'Log response'
+    _order = 'date desc'
+
+    date = fields.Datetime('Date', default=fields.Datetime.now, required=True)
+    json_sent = fields.Html('JSON sent')
+    json_response = fields.Html('JSON response')
+    request_id = fields.Many2one('l10n_pe_edi.request', string='EDI request')

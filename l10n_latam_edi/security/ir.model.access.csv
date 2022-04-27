@@ -4,3 +4,9 @@ access_l10n_edi_request,l10n_edi.request,model_l10n_edi_request,base.group_user,
 access_l10n_edi_request_account,l10n_edi.request.account,model_l10n_edi_request,account.group_account_invoice,1,1,1,0
 access_l10n_edi_request_manager,l10n_edi.request.manager,model_l10n_edi_request,base.group_erp_manager,1,1,1,1
 access_l10n_edi_request_account_manager,l10n_edi.request.manager,model_l10n_edi_request,account.group_account_manager,1,1,1,1
+access_l10n_edi_request_account_manager,l10n_edi.request.manager,model_l10n_edi_request,account.group_account_manager,1,1,1,1
+
+access_l10n_pe_edi_request_log,l10n_pe_edi.request.log,model_l10n_pe_edi_request_log,base.group_user,1,0,0,0
+access_l10n_pe_edi_request_log_account,l10n_pe_edi.request.log.account,model_l10n_pe_edi_request_log,account.group_account_invoice,1,1,1,0
+access_l10n_pe_edi_request_log_manager,l10n_pe_edi.request.log.manager,model_l10n_pe_edi_request_log,base.group_erp_manager,1,1,1,1
+access_l10n_pe_edi_request_log_account_manager,l10n_pe_edi.request.log.manager,model_l10n_pe_edi_request_log,account.group_account_manager,1,1,1,1
