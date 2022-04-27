@@ -21,6 +21,7 @@ class EdiEcRequest(models.Model):
     @api.depends('model', 'res_id')
     def _compute_reference(self):
         for res in self:
+            res.model
             res.reference = "%s,%s" % (res.model, res.res_id)
 
     def action_document_send(self):
