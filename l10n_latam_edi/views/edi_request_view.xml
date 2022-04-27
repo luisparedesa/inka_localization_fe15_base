@@ -9,7 +9,7 @@
                 <sheet>
                     <group>
                         <group name="information" string="Information"> 
-                            <field name="reference" widget="reference" string="Document"/>
+                            <field name="partner_id" widget="partner_id" string="Document"/>
                         </group>
                     </group>  
                 </sheet>

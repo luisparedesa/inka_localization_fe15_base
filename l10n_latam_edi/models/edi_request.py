@@ -10,7 +10,7 @@ class EdiEcRequest(models.Model):
     _name = 'l10n_edi.request'
     _description = 'EDI EC Request'
 
-    partner_id = fields.Many2one('res.partner', 'Partner', default=lambda self: self.env.partner.id)
+    partner_id = fields.Many2one('res.partner', 'Partner', default=lambda self: self.partner_id)
     document_number = fields.Char(string='Document number')
     model = fields.Char(string='Model Name')
     res_id = fields.Integer(string='Record ID', help="ID of the target record in the database")

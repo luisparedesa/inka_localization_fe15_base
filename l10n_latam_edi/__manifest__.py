@@ -13,7 +13,9 @@
                 'account_edi',
                 ],
     'data': [
+        'security/ir.model.access.csv',
         'views/account_edi_document.xml',
+        'views/account_move.xml',
         'views/edi_request_view.xml'
     ],
     'auto_install': True,
