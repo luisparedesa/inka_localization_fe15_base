@@ -7,14 +7,22 @@
         <field name="arch" type="xml">
             <form string="EDI Request" create="false">
                 <sheet>
+                    <div>
+                        <h1 class="mt0">
+                            <field name="name" readonly="True" attrs="{'invisible':[('name', '=', '/')]}"/>
+                        </h1>
+                    </div>
                     <group>
-                        <group name="information" string="Information"> 
-                            <field name="partner_id" widget="partner_id" string="Document"/>
+                        <group name="information" string="Information">
+                            <field name="document_number" widget="document_number" string="N° Factura"/>
+                            <field name="partner_id" widget="partner_id" string="Cliente"/>
+                            <field name="document_type" widget="document_type" string="Tipo de documento"/>
+                            <field name="document_date" widget="document_date" string="Fecha de emisión"/>
                         </group>
-                    </group>  
+                    </group>
                 </sheet>
             </form>
         </field>
     </record>
-    
+
 </odoo>
