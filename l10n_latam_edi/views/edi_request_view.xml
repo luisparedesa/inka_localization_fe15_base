@@ -16,10 +16,31 @@
                         <group name="information" string="Information">
                             <field name="document_number" widget="document_number" string="N° Factura"/>
                             <field name="partner_id" widget="partner_id" string="Cliente"/>
-                            <field name="document_type" widget="document_type" string="Tipo de documento"/>
+                            <field name="document_type" widget="document_type_id" string="Tipo de documento"/>
                             <field name="document_date" widget="document_date" string="Fecha de emisión"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Historial de Envío">
+                            <field name="log_ids" string="Status log" readonly="True">
+                                <form>
+                                    <sheet>
+                                        <notebook name="other_info">
+                                            <page name="name" string="JSON">
+                                                <field name="json_sent"/>
+                                            </page>
+                                            <page name="name" string="Response">
+                                                <field name="json_response"/>
+                                            </page>
+                                        </notebook>
+                                    </sheet>
+                                </form>
+                                <tree>
+                                    <field name="date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

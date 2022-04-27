@@ -18,7 +18,6 @@ class AccountMove(models.Model):
         if not self.journal_id.is_electronic_invoice:
             raise UserError(_('The invoice is not a Electronic document'))
         for move in self:
-            move.write({'l10n_edi_request_id': l10n_edi_request_id})
             l10n_edi_request_id = self.env['l10n_edi.request'].create({
                 'partner_id': move.partner_id.id,
                 'document_number': move.name,
@@ -27,6 +26,7 @@ class AccountMove(models.Model):
                 'res_id': self.id,
                 'type': 'invoice',
                 'document_date': move.invoice_date})
+            move.write({'l10n_edi_request_id': l10n_edi_request_id})
 
     def action_open_edi_request(self):
         self.ensure_one()

@@ -13,13 +13,14 @@ class EdiEcRequest(models.Model):
 
     name = fields.Char(string='Description', size=128, index=True, required=True, default='New')
     partner_id = fields.Many2one('res.partner', 'Partner', default=lambda self: self.partner_id)
-    document_type = fields.Many2one('inka.account.table.document.type', 'Document_Type')
+    document_type = fields.Char(string='document_type')
     document_number = fields.Char(string='Document number')
     model = fields.Char(string='Model Name')
     res_id = fields.Integer(string='Record ID', help="ID of the target record in the database")
     type = fields.Selection([('invoice','Invoice')], string='Document ype')
     document_date = fields.Date(string='Document date')
     reference = fields.Char(string='Reference', compute='_compute_reference', readonly=True, store=False)
+    log_ids = fields.One2many('l10n_pe_edi.request.log','request_id', string='EDI log', copy=False)
 
     @api.depends('model', 'res_id')
     def _compute_reference(self):
@@ -49,3 +50,14 @@ class EdiEcRequest(models.Model):
                 'type': 'ir.actions.act_window',
             }
         return True
+
+
+class L10nPeEdiRequestLog(models.Model):
+    _name = 'l10n_pe_edi.request.log'
+    _description = 'Log response'
+    _order = 'date desc'
+
+    date = fields.Datetime('Date', default=fields.Datetime.now, required=True)
+    json_sent = fields.Html('JSON sent')
+    json_response = fields.Html('JSON response')
+    request_id = fields.Many2one('l10n_pe_edi.request', string='EDI request')
