@@ -25,6 +25,8 @@ class AccountJournal(models.Model):
                                                  compute='_compute_refund_seq_number_next',
                                                  inverse='_inverse_refund_seq_number_next')
 
+    # Funciones para obtener el número siguiente
+
     @api.depends('sequence_id.use_date_range', 'sequence_id.number_next_actual')
     def _compute_seq_number_next(self):
         for journal in self:
@@ -87,6 +89,8 @@ class AccountJournal(models.Model):
                     % (journal.refund_sequence_id.display_name, journal.display_name)
                 )
 
+    # Funciones cuando creas o duplicas un nuevo diario
+
     @api.model
     def create(self, vals):
         if not vals.get("sequence_id"):
@@ -118,5 +122,3 @@ class AccountJournal(models.Model):
     def _create_sequence(self, vals, refund=False):
         seq_vals = self._prepare_sequence(vals, refund=refund)
         return self.env["ir.sequence"].sudo().create(seq_vals)
-
-
