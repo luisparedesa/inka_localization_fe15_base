@@ -63,10 +63,10 @@
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='tax_ids']" position="before">
-                    <field name="affection_id" options="{'no_create': True}"  domain="[('is_visible','=',True)]"/>
+                    <field name="affection_id" options="{'no_create': True}"  optional="hide" domain="[('is_visible','=',True)]"/>
                 </xpath>
                 <xpath expr="//field[@name='line_ids']/tree/field[@name='tax_ids']" position="before">
-                    <field name="affection_id" options="{'no_create': True}"  domain="[('is_visible','=',True)]"/>
+                    <field name="affection_id" options="{'no_create': True}" optional="hide" domain="[('is_visible','=',True)]"/>
                 </xpath>
             </field>
         </record>
