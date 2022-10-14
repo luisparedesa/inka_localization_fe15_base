@@ -22,7 +22,7 @@
     'currency': 'USD',
     'installable': True,
     'application': False,
-    'auto_install': True,
+    'auto_install': False,
     'post_init_hook': "create_journal_sequences",
     'images': ['static/description/banner.png'],
 }
