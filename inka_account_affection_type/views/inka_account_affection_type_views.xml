@@ -74,14 +74,14 @@
     </record>
 
 
-    <!-- Tipo de Afectación en account.tax -->
+    <!-- Tipo de Afectación en account.tax.group -->
 
     <record id="view_inka_account_affection_type_inherit_account_tax" model="ir.ui.view">
         <field name="name">account.tax.affectation.type.inherit</field>
-        <field name="model">account.tax</field>
-        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="model">account.tax.group</field>
+        <field name="inherit_id" ref="account.view_tax_group_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='type_tax_use']" position="after">
+            <xpath expr="//field[@name='sequence']" position="after">
                 <field name="affection_id"/>
             </xpath>
         </field>
